@@ -68,11 +68,11 @@ b b v S S b b v N
 y h x S S y h x T;
 
 const char *I_ART =
-b b w N_I
-b b v N_I
-b b v N_I
-b b v N_I
-b b v N_I
+b b w N_I_SPACE
+b b v N_I_SPACE
+b b v N_I_SPACE
+b b v N_I_SPACE
+b b v N_I_SPACE
 y h x T;
 
 const char *J_ART =
@@ -108,11 +108,11 @@ b b v S y h x S b b v N_M
 y h x S S S S S y h x T;
 
 const char *N_ART =
-b b b w S S S b b w N_N
-b b b b w S S b b v N_N
-b b z b b w S b b v N_N
-b b v y b b w b b v N_N
-b b v S y b b b b v N_N
+b b b w S S S b b w N_NW
+b b b b w S S b b v N_NW
+b b z b b w S b b v N_NW
+b b v y b b w b b v N_NW
+b b v S y b b b b v N_NW
 y h x S S y h h h x T;
 
 const char *O_ART =
@@ -132,11 +132,11 @@ b b v S S S S S N
 y h x S S S S S T;
 
 const char *Q_ART =
-S b b b b b b w S N_Q
-b b z h h h b b w N_Q
-b b v S S S b b v N_Q
-b b v d d S b b v N_Q
-y b b b b b b z x N_Q
+S b b b b b b w S N_QTVY
+b b z h h h b b w N_QTVY
+b b v S S S b b v N_QTVY
+b b v d d S b b v N_QTVY
+y b b b b b b z x N_QTVY
 S y h h u u h x S T;
 
 const char *R_ART =
@@ -156,11 +156,11 @@ b b b b b b b v N
 y h h h h h h x T;
 
 const char *T_ART =
-b b b b b b b b w N_T
-y h h b b z h h x N_T
-S S S b b v S S S N_T
-S S S b b v S S S N_T
-S S S b b v S S S N_T
+b b b b b b b b w N_QTVY
+y h h b b z h h x N_QTVY
+S S S b b v S S S N_QTVY
+S S S b b v S S S N_QTVY
+S S S b b v S S S N_QTVY
 S S S y h x S S S T;
 
 const char *U_ART =
@@ -172,19 +172,19 @@ y b b b b b z x N
 S y h h h h x S T;
 
 const char *V_ART =
-b b w S S S b b w N_V
-b b v S S S b b v N_V
-b b v S S S b b v N_V
-y b b w S b b z x N_V
-S y b b b b z x S N_V
+b b w S S S b b w N_QTVY
+b b v S S S b b v N_QTVY
+b b v S S S b b v N_QTVY
+y b b w S b b z x N_QTVY
+S y b b b b z x S N_QTVY
 S S y h h h x S S T;
 
 const char *W_ART =
-b b w S S S S b b w N_W
-b b v S S S S b b v N_W
-b b v S b w S b b v N_W
-b b v b b b w b b v N_W
-y b b b z b b b z x N_W
+b b w S S S S b b w N_NW
+b b v S S S S b b v N_NW
+b b v S b w S b b v N_NW
+b b v b b b w b b v N_NW
+y b b b z b b b z x N_NW
 S y h h x y h h x S T;
 
 const char *X_ART =
@@ -196,11 +196,11 @@ b b z x S b b w N
 y h x S S y h x T;
 
 const char *Y_ART =
-b b w S S S b b w N_Y
-y b b w S b b z x N_Y
-S y b b b b z x S N_Y
-S S y b b z x S S N_Y
-S S S b b v S S S N_Y
+b b w S S S b b w N_QTVY
+y b b w S b b z x N_QTVY
+S y b b b b z x S N_QTVY
+S S y b b z x S S N_QTVY
+S S S b b v S S S N_QTVY
 S S S y h x S S S T;
 
 const char *Z_ART =
@@ -212,11 +212,11 @@ b b b b b b b w N
 y h h h h h h x T;
 
 const char *SPACE_ART =
-S S S N_SPACE
-S S S N_SPACE
-S S S N_SPACE
-S S S N_SPACE
-S S S N_SPACE
+S S S N_I_SPACE
+S S S N_I_SPACE
+S S S N_I_SPACE
+S S S N_I_SPACE
+S S S N_I_SPACE
 S S S T;
 
 #endif

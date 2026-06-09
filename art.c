@@ -11,20 +11,20 @@ b b v S S b b v N
 y h x S S y h x T;
 
 
-const char *B_ART = 
-b b b b b b w S N 
-b b z h h b b w N 
-b b b b b b z x N 
-b b z h h b b w N 
-b b b b b b z x N 
+const char *B_ART =
+b b b b b b w S N
+b b z h h b b w N
+b b b b b b z x N
+b b z h h b b w N
+b b b b b b z x N
 y h h h h h x S T;
 
-const char *C_ART = 
-S b b b b b b w N 
-b b z h h h h x N 
-b b v S S S S S N 
-b b v S S S S S N 
-y b b b b b b w N 
+const char *C_ART =
+S b b b b b b w N
+b b z h h h h x N
+b b v S S S S S N
+b b v S S S S S N
+y b b b b b b w N
 S y h h h h h x T;
 
 const char *D_ART =
@@ -34,5 +34,32 @@ b b v S S b b v N
 b b v S S b b v N
 b b b b b b z x N
 y h h h h h x S T;
+
+const char *E_ART =
+b b b b b b b w N
+b b z h h h h x N
+b b b b b w S S N
+b b z h h x S S N
+b b b b b b b w N
+y h h h h h h x T;
+
+const char *F_ART =
+b b b b b b b w N
+b b z h h h h x N
+b b b b b w S S N
+b b z h h x S S N
+b b v S S S S S N
+y h x S S S S S T;
+
+const char *G_ART =
+S b b b b b w S N
+b b z h h h x S N
+b b v S b b b w N
+b b v S S b b v N
+y b b b b b z x N
+S y h h h h x S T;
+
+//const char *H_ART =
+
 
 #endif

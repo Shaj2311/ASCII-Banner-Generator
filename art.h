@@ -5,7 +5,7 @@
 #define ART_HEIGHT 6
 
 // SOLID BLOCK
-#define b (char)219
+#define b "\xDB"
 
 //  __________________________
 // /\                         \
@@ -19,41 +19,53 @@
 //   |           y|x          |
 //   |   _____________________|_
 //    \_/_______________________/
-#define w (char)187
-#define x (char)188
-#define y (char)200
-#define z (char)201
+#define w "\xBB"
+#define x "\xBC"
+#define y "\xC8"
+#define z "\xC9"
 
 
 // double horizontal and vertical lines
-#define h (char)205
-#define v (char)186
+#define h "\xCD"
+#define v "\xBA"
 
-// space and new line
-const char s = ' ';
-const char n = '\n';
+// space
+#define S " "
+
+// int to string macro functions
+#define STRINGIFY_HELPER(X) #X
+#define STRINGIFY(X) STRINGIFY_HELPER(X)
+
+// new line
+#define N "\033[1B\033[" STRINGIFY(ART_WIDTH) "D"
+
+// back to top
+#define T "\033[" STRINGIFY(ART_HEIGHT) "A"
 
 
+const char *A_ART =
+	S b b b b b w S N
+	b b z h h b b w N
+	b b b b b b b v N
+	b b z h h b b v N
+	b b v S S b b v N
+	y h x S S y h x T;
 
 
-const char A_ART[] =
-{
-	s,b,b,b,b,b,w,s,n,
-	b,b,z,h,h,b,b,w,n,
-	b,b,b,b,b,b,b,v,n,
-	b,b,z,h,h,b,b,v,n,
-	b,b,v,s,s,b,b,v,n,
-	y,h,x,s,s,y,h,x,0
-};
+const char *B_ART = 
+	b b b b b b w S N 
+	b b z h h b b w N 
+	b b b b b b z x N 
+	b b z h h b b w N 
+	b b b b b b z x N 
+	y h h h h h x S;
 
-const char B_ART[] = 
-{
-	b,b,b,b,b,b,w,s,n,
-	b,b,z,h,h,b,b,w,n,
-	b,b,b,b,b,b,z,x,n,
-	b,b,z,h,h,b,b,w,n,
-	b,b,b,b,b,b,z,x,n,
-	y,h,h,h,h,h,x,s,0
-};
+const char *C_ART = 
+	S b b b b b b w N 
+	b b z h h h h x N 
+	b b v S S S S S N 
+	b b v S S S S S N 
+	y b b b b b b w N 
+	S y h h h h h x;
 
 #endif

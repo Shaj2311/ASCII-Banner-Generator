@@ -1,5 +1,6 @@
 # ASCII-Banner-Generator
 Figlet-like tool that generates text in THAT ONE font :)
+Here's the catch: Only alphabets and spaces allowed (I'm too tired to implement everything else)
 
 # Try it Out
 You know what to do

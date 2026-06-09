@@ -2,7 +2,7 @@
 #define ART_H
 
 #define ART_WIDTH 8
-#define ART_HEIGHT 5
+#define ART_HEIGHT 6
 
 // SOLID BLOCK
 #define b (char)219
@@ -44,6 +44,16 @@ const char A_ART[] =
 	b,b,z,h,h,b,b,v,n,
 	b,b,v,s,s,b,b,v,n,
 	y,h,x,s,s,y,h,x,0
+};
+
+const char B_ART[] = 
+{
+	b,b,b,b,b,b,w,s,n,
+	b,b,z,h,h,b,b,w,n,
+	b,b,b,b,b,b,z,x,n,
+	b,b,z,h,h,b,b,w,n,
+	b,b,b,b,b,b,z,x,n,
+	y,h,h,h,h,h,x,s,0
 };
 
 #endif

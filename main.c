@@ -44,8 +44,19 @@ int printArt(char *str, const char *arts[])
 	return 1;
 }
 
-int main()
+int main(int argc, char **argv)
 {
+	if(argc < 2)
+	{
+		printf("Not enough arguments provided\n");
+		return 1;
+	}
+	if(argc > 2)
+	{
+		printf("Too many arguments provided\n");
+		return 1;
+	}
+
 	const char *alphabetArts[] =
 	{
 		A_ART, B_ART, C_ART, D_ART,
@@ -57,7 +68,7 @@ int main()
 		Y_ART, Z_ART
 	};
 
-	char *str = "Aun is Gone";
+	char *str = argv[1];
 	if(!printArt(str, alphabetArts))
 	{
 		printf("Alphabets and spaces only please UwU");

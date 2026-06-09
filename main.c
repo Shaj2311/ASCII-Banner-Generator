@@ -1,4 +1,4 @@
-#include "art.h"
+#include "art.c"
 #include <stdio.h>
 
 int main()
@@ -7,6 +7,5 @@ int main()
 	//printf("\033[%dA", ART_HEIGHT);
 	//clear screen
 	printf("\033[H\033[2J");
-	printf("%s", A_ART);
-	printf("%s", B_ART);
+	printf("%s%s%s", A_ART, B_ART, C_ART);
 }

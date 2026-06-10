@@ -69,9 +69,9 @@ int printArt(char *str, const char *arts[])
 	return 1;
 }
 
-void printUsage(char **argv)
+void printUsage()
 {
-	printf("Usage:\t%s [-h | --help]\n\t%s [-c | --color <brgyBmcw>] <TEXT>\n", *argv, *argv);
+	printf("Usage:\tbiglet [-h | --help]\n\tbiglet [-c | --color <brgyBmcw>] <TEXT>\n");
 }
 
 call_type_t parseInput(color_t *colorChoice, char **str, int argc, char **argv)
@@ -154,12 +154,12 @@ int main(int argc, char **argv)
 	//print usage message if invalid syntax or asking for usage instructions
 	if(callType == ERROR)
 	{
-		printUsage(argv);
+		printUsage();
 		return 1;
 	}
 	if(callType == HELP)
 	{
-		printUsage(argv);
+		printUsage();
 		return 0;
 	}
 

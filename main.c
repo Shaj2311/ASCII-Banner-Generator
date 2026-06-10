@@ -115,6 +115,12 @@ call_type_t parseInput(color_t *colorChoice, char **str, int argc, char **argv)
 				return ERROR;
 		}
 
+		else if(*argv[i] == '-')
+		{
+			printf("Unknown option: \'%s\'\n", argv[i]);
+			return ERROR;
+		}
+
 		else
 		{
 			*str = argv[i];

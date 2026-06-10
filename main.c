@@ -24,7 +24,7 @@ typedef enum
 	WHITE
 } color_t;
 
-const char colorMap[] = "brgyBmcw";
+const char *colorMap[] = {"b", "r", "g", "y", "B", "m", "c", "w"};
 
 int printArt(char *str, const char *arts[])
 {
@@ -88,10 +88,7 @@ call_type_t parseInput(color_t *colorChoice, char **str, int argc, char **argv)
 	for(int i = 1; i < argc; i++)
 	{
 		if(strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "--help") == 0)
-		{
-			printUsage(argv);
 			return HELP;
-		}
 
 		else if(strcmp(argv[i], "-c") == 0 || strcmp(argv[i], "--color") == 0)
 		{
@@ -106,7 +103,7 @@ call_type_t parseInput(color_t *colorChoice, char **str, int argc, char **argv)
 			for(int j = 0; j < NUM_COLORS; j++)
 			{
 				//assign color if matches
-				if(colorMap[j] == *argv[i])
+				if(strcmp(colorMap[j], argv[i]) == 0)
 				{
 					*colorChoice = BLACK + j;
 					break;
@@ -152,9 +149,15 @@ int main(int argc, char **argv)
 	//parse input and get call type
 	call_type_t callType = parseInput(&choice, &str, argc, argv);
 	if(callType == ERROR)
+	{
+		printUsage(argv);
 		return 1;
+	}
 	if(callType == HELP)
+	{
+		printUsage(argv);
 		return 0;
+	}
 
 	if(!printArt(str, alphabetArts))
 	{

@@ -143,11 +143,11 @@ int main(int argc, char **argv)
 		Y_ART, Z_ART
 	};
 
-	color_t choice;
+	color_t colorChoice;
 	char *str;
 
 	//parse input and get call type
-	call_type_t callType = parseInput(&choice, &str, argc, argv);
+	call_type_t callType = parseInput(&colorChoice, &str, argc, argv);
 	if(callType == ERROR)
 	{
 		printUsage(argv);
@@ -159,12 +159,25 @@ int main(int argc, char **argv)
 		return 0;
 	}
 
+	//apply color if needed
+	if(callType == COLOR)
+	{
+		char colorStr[9];
+		printf("Color str: %s\n", colorStr);
+		sprintf(colorStr, "\033[%dm", colorChoice);
+		printf("%s", colorStr);
+	}
+
+	//print art
 	if(!printArt(str, alphabetArts))
 	{
 		printf("Alphabets and spaces only please UwU");
 		return 1;
 	}
 
-	printf("Color: %d\n", choice);
+	//reset color
+	if(callType == COLOR)
+		printf("\033[0m");
+
 	return 0;
 }

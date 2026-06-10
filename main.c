@@ -77,11 +77,7 @@ void printUsage(char **argv)
 call_type_t parseInput(color_t *colorChoice, char **str, int argc, char **argv)
 {
 	if(argc < 2)
-	{
-		printf("Error: Not enough arguments provided\n");
-		printUsage(argv);
 		return ERROR;
-	}
 
 	int hasColor = 0;
 
@@ -148,6 +144,8 @@ int main(int argc, char **argv)
 
 	//parse input and get call type
 	call_type_t callType = parseInput(&colorChoice, &str, argc, argv);
+
+	//print usage message if invalid syntax or asking for usage instructions
 	if(callType == ERROR)
 	{
 		printUsage(argv);

@@ -1,5 +1,30 @@
 #include "art.c"
 #include <stdio.h>
+#include <string.h>
+
+#define NUM_COLORS 8
+
+typedef enum
+{
+	HELP,
+	COLOR,
+	PLAIN,
+	ERROR
+} call_type_t;
+
+typedef enum
+{
+	BLACK = 30,
+	RED,
+	GREEN,
+	YELLOW,
+	BLUE,
+	MAGENTA,
+	CYAN,
+	WHITE
+} color_t;
+
+const char colorMap[] = "brgyBmcw";
 
 int printArt(char *str, const char *arts[])
 {
@@ -44,18 +69,71 @@ int printArt(char *str, const char *arts[])
 	return 1;
 }
 
-int main(int argc, char **argv)
+void printUsage(char **argv)
+{
+	printf("Usage:\t%s [-h | --help]\n\t%s [-c | --color <brgyBmcw>] <TEXT>\n", *argv, *argv);
+}
+
+call_type_t parseInput(color_t *colorChoice, char **str, int argc, char **argv)
 {
 	if(argc < 2)
 	{
-		printf("Not enough arguments provided\n");
-		return 1;
+		printf("Error: Not enough arguments provided\n");
+		printUsage(argv);
+		return ERROR;
 	}
-	if(argc > 2)
+
+	int hasColor = 0;
+
+	for(int i = 1; i < argc; i++)
 	{
-		printf("Too many arguments provided\n");
-		return 1;
+		if(strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "--help") == 0)
+		{
+			printUsage(argv);
+			return HELP;
+		}
+
+		else if(strcmp(argv[i], "-c") == 0 || strcmp(argv[i], "--color") == 0)
+		{
+			hasColor = 1;
+
+			if(i + 1 >= argc)
+				return ERROR;
+
+			//find color
+			i++;
+			*colorChoice = -1;
+			for(int j = 0; j < NUM_COLORS; j++)
+			{
+				//assign color if matches
+				if(colorMap[j] == *argv[i])
+				{
+					*colorChoice = BLACK + j;
+					break;
+				}
+			}
+
+			//color not found
+			if(*colorChoice == -1)
+				return ERROR;
+
+			//color provided but text string not provided
+			if(argc < 4)
+				return ERROR;
+		}
+
+		else
+		{
+			*str = argv[i];
+		}
+
 	}
+
+	return hasColor ? COLOR : PLAIN;
+}
+
+int main(int argc, char **argv)
+{
 
 	const char *alphabetArts[] =
 	{
@@ -68,11 +146,22 @@ int main(int argc, char **argv)
 		Y_ART, Z_ART
 	};
 
-	char *str = argv[1];
+	color_t choice;
+	char *str;
+
+	//parse input and get call type
+	call_type_t callType = parseInput(&choice, &str, argc, argv);
+	if(callType == ERROR)
+		return 1;
+	if(callType == HELP)
+		return 0;
+
 	if(!printArt(str, alphabetArts))
 	{
 		printf("Alphabets and spaces only please UwU");
 		return 1;
 	}
+
+	printf("Color: %d\n", choice);
 	return 0;
 }

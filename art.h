@@ -57,6 +57,14 @@
 // back to top
 #define T "\033[" STRINGIFY(ART_HEIGHT) "A"
 
+extern const char *A_ART, *B_ART, *C_ART,
+       *D_ART, *E_ART, *F_ART, *G_ART,
+       *H_ART, *I_ART, *J_ART, *K_ART,
+       *L_ART, *M_ART, *N_ART, *O_ART,
+       *P_ART, *Q_ART, *R_ART, *S_ART,
+       *T_ART, *U_ART, *V_ART, *W_ART,
+       *X_ART, *Y_ART, *Z_ART, *SPACE_ART;
+
 
 
 #endif

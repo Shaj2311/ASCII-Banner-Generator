@@ -1,7 +1,11 @@
 #ifndef ART_C
 #define ART_C
 
-#include "art.h"
+#ifdef WIN32
+#include "art_ascii.h"
+#else
+#include "art_utf8.h"
+#endif
 const char *A_ART =
 S b b b b b w S N
 b b z h h b b w N

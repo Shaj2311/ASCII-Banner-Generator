@@ -1,4 +1,8 @@
-#include "art.h"
+#ifdef WIN32
+#include "art_ascii.h"
+#else
+#include "art_utf8.h"
+#endif
 #include <stdio.h>
 #include <string.h>
 

@@ -1,16 +1,15 @@
 CC = gcc
 TARGET = biglet
+C_FILES = biglet.c art.c
+O_FILES = biglet.o art.o
 
 all: $(TARGET)
 
-$(TARGET): biglet.o art.o
-	gcc biglet.o art.o -o $(TARGET)
+$(TARGET): $(O_FILES)
+	$(CC) $(O_FILES) -o $(TARGET)
 
-biglet.o: biglet.c
-	gcc -c biglet.c -o biglet.o
-
-art.o: art.c
-	gcc -c art.c -o art.o
+%.o: %.c
+	$(CC) -c $< -o $@
 
 clean:
-	rm -f *.o $(TARGET)
+	rm -f $(O_FILES) $(TARGET)

@@ -7,7 +7,7 @@ You know what to do
 ```
 git clone https://github.com/Shaj2311/biglet
 cd ./biglet
-gcc biglet.c -o biglet
+make
 ./biglet <YOUR TEXT HERE>
 ```
 Run `biglet -h` for usage instructions

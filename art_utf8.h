@@ -55,7 +55,7 @@
 #define N_QTVY "\033[1B\033[" STRINGIFY(QTVY_ART_WIDTH) "D"
 
 // back to top
-#define T "\033[" STRINGIFY(ART_HEIGHT) "A"
+#define T "\033[" STRINGIFY(ART_HEIGHT) "A\033[1B"
 
 extern const char *A_ART, *B_ART, *C_ART,
        *D_ART, *E_ART, *F_ART, *G_ART,

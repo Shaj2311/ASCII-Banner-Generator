@@ -47,9 +47,6 @@ int printArt(char *str, const char *arts[])
 		return 0;
 	}
 
-	//clear screen
-	printf("\033[H\033[2J");
-
 
 	ptr = str;
 	while(*ptr)
@@ -66,7 +63,7 @@ int printArt(char *str, const char *arts[])
 
 
 
-
+	//print new lines so that future printed text does not overwrite art
 	for(int i = 0; i < ART_HEIGHT; i++)
 		puts("");
 
@@ -171,7 +168,6 @@ int main(int argc, char **argv)
 	if(callType == COLOR)
 	{
 		char colorStr[9];
-		printf("Color str: %s\n", colorStr);
 		sprintf(colorStr, "\033[%dm", colorChoice);
 		printf("%s", colorStr);
 	}

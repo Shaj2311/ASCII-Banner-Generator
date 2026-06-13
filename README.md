@@ -8,11 +8,8 @@ You know what to do
 git clone https://github.com/Shaj2311/biglet
 cd ./biglet
 make
-./biglet <YOUR TEXT HERE>
 ```
 Run `biglet -h` for usage instructions
 
 # Screenshots
-(Just one at the moment lol)<br>
-<img width="807" height="127" alt="Screenshot 2026-06-09 212134" src="https://github.com/user-attachments/assets/185e6389-40ea-424d-9c6d-6473f802ecf3" /><br>
-Where did you go, Aun?? :(
+<img width="1047" height="971" alt="file-1dcae53deb1abf5061e9f68e7aac1481" src="https://github.com/user-attachments/assets/92e9bc69-6714-43bd-9df6-7d826ed728fd" />
